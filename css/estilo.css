@@ -15,12 +15,17 @@
  }
 
  html,
- body {
+ body, div {
 
  	margin: 0;
  	padding: 0;
  	background-color: rgb(49, 49, 49);
+	 resize: both;
  }
+
+div.mold {
+resize: inherit;
+}
 
  h4.tite {
  	font-family: "OpenSans";

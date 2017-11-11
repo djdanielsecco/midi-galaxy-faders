@@ -362,7 +362,7 @@ myFunction1();
 			divLog2.innerHTML = "CMD: " + tarimai.cmdName + '<br>' + divLog2.innerHTML;
 			divLog3.innerHTML = "Channel:  " + tarimai.channel + '<br>' + divLog3.innerHTML;
 			divLog4.innerHTML = "Data:  " + tarimai.cmd + '<br>' + divLog4.innerHTML;
-			divLog5.innerHTML = "Data1  " + tarimai.data1 + '<br>' + divLog5.innerHTML;
+			divLog5.innerHTML = "Data1:  " + tarimai.data1 + '<br>' + divLog5.innerHTML;
 			divLog6.innerHTML = "Data2:  " + data2 + '<br>' + divLog6.innerHTML;
 			divLog10.innerHTML = "Port " + midimessageEvent.currentTarget.name + '<br>' + divLog10.innerHTML;
 			divLog11.innerHTML = "TIME:" + midimessageEvent.timeStamp + '<br>' + divLog11.innerHTML;

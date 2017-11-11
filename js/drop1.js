@@ -1,5 +1,8 @@
-
-var htmm, htmm1, htmm2, cotr1 = 0, chh1 = 1, pf1 = 2, dat1 = 74 ,jpjp, poiu, jpjp1,
+var htmm, htmm1, htmm2, cotr1 = 0,
+	chh1 = 1,
+	pf1 = 2,
+	dat1 = 74,
+	jpjp, poiu, jpjp1,
 	seleclist = document.getElementById('port1'),
 	seleclist1 = document.getElementById('cc1'),
 	seleclist2 = document.getElementById('chann'),
@@ -15,7 +18,7 @@ var htmm, htmm1, htmm2, cotr1 = 0, chh1 = 1, pf1 = 2, dat1 = 74 ,jpjp, poiu, jpj
 
 
 function myFunction1() {
-	
+
 	'use strict'
 	WebMidi.enable();
 	outlist.forEach(function (port) {
@@ -49,38 +52,40 @@ function myFunction1() {
 	//     console.log(dat1);
 	//   
 	// }
-	
+
 }
 var trtre = document.getElementById('jj');
-	trtre.addEventListener('input', function () {
-		cotr1 = document.getElementById('jj').value;
-send1(dat1, cotr1, pf1, chh1 );
-		console.log(cotr1 + 'oooooooo');
-		  
-	}, true);
+trtre.addEventListener('input', function () {
+	cotr1 = document.getElementById('jj').value;
+	send1(dat1, cotr1, pf1, chh1);
+	console.log(cotr1 + 'oooooooo');
+
+}, true);
+
+
 var xxx1 = document.getElementById('cc1');
-xxx1.onchange= function(){
- jpjp = document.getElementById('cc1').value;
+xxx1.onchange = function () {
+	jpjp = document.getElementById('cc1').value;
 	dat1 = Number(jpjp);
-	
+
 	console.log(dat1);
 	return dat1;
-	
+
 }
 var xxx2 = document.getElementById("chann");
-xxx2.onchange= function(){
- jpjp1 = xxx2.value;
+xxx2.onchange = function () {
+	jpjp1 = xxx2.value;
 	chh1 = jpjp1;
-	
+
 	console.log(chh1);
 	//return chh1;
-	
+
 }
 
 
-function send1(dat1, cotr1, pf1, chh1 ){
+function send1(dat1, cotr1, pf1, chh1) {
 
-WebMidi.outputs[pf1].sendControlChange(dat1, cotr1, chh1);
+	WebMidi.outputs[pf1].sendControlChange(dat1, cotr1, chh1);
 
 }
 // Close the dropdown menu if the user clicks outside of it
