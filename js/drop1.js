@@ -3,15 +3,19 @@ var htmm, htmm1, htmm2, cotr1 = 0,
 	pf1 = 2,
 	dat1 = 74,
 	jpjp, poiu, jpjp1,
+	
 	seleclist = document.getElementById('port1'),
 	seleclist1 = document.getElementById('cc1'),
 	seleclist2 = document.getElementById('chann'),
+	
 	seleclist3 = document.getElementById('port2'),
 	seleclist4 = document.getElementById('cc2'),
 	seleclist5 = document.getElementById('chann2'),
+	
 	seleclist6 = document.getElementById('port3'),
 	seleclist7 = document.getElementById('cc3'),
 	seleclist8 = document.getElementById('chann3'),
+	
 	seleclist9 = document.getElementById('port4'),
 	seleclist10 = document.getElementById('cc4'),
 	seleclist11 = document.getElementById('chann4');
@@ -29,10 +33,12 @@ function myFunction1() {
 	seleclist3.innerHTML = htmm;
 	seleclist6.innerHTML = htmm;
 	seleclist9.innerHTML = htmm;
+	
 	for (var i = 1; i <= 16; i++) {
 
 		htmm2 += '<option value="' + i + ' ">' + 'cha' + i + '</option>';
 	}
+	
 	seleclist2.innerHTML = htmm2;
 	seleclist5.innerHTML = htmm2;
 	seleclist8.innerHTML = htmm2;

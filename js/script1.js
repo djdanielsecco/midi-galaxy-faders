@@ -1,4 +1,6 @@
-window.onload = function () {
+window.onload = 
+	
+function () {
 
 	'use strict';
 
@@ -23,14 +25,26 @@ window.onload = function () {
 		checkboxMIDIOutOnChange,
 		activeInputs = {},
 		activeOutputs = {};
+	
 	var context = new AudioContext(),
 		oscillators = {};
 
 
+	
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	
+	
 	if (navigator.requestMIDIAccess !== undefined) {
 		navigator.requestMIDIAccess({
 			sysex: true
-		}).then(
+		})
+			
+			
+		.then(
 
 			function onFulfilled(access) {
 				midiAccess = access;
@@ -81,7 +95,13 @@ myFunction1();
 				divInputs.innerHTML = e.message;
 				divOutputs.innerHTML = '';
 			}
+			
+		)
+		
+		.then(
+			console.log('promisse')
 		);
+			  
 	}
 
 	// browsers without WebMIDI API or Jazz plugin
@@ -89,7 +109,16 @@ myFunction1();
 		divInputs.innerHTML = 'No access to MIDI devices: browser does not support WebMIDI API, please use the WebMIDIAPIShim together with the Jazz plugin';
 		divOutputs.innerHTML = '';
 	}
-
+	
+	
+	
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	
+	
 
 	function showMIDIPorts() {
 		var
@@ -128,7 +157,6 @@ myFunction1();
 			checkbox.addEventListener('change', checkboxMIDIOutOnChange, false);
 		}
 	}
-
 
 	function extractMidiCommand(data) {
 		var raw = data[0];
@@ -233,7 +261,9 @@ myFunction1();
 		return note;
 
 	}
+	
 	const noteArray = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+	
 	const controllerObject = {
 		'0': 'bankselectcoarse',
 		'1': 'modulationwheelcoarse',
@@ -305,8 +335,6 @@ myFunction1();
 		'127': 'polymodeon'
 
 	}
-
-
 
 	function inputListener(midimessageEvent) {
 
@@ -415,43 +443,12 @@ myFunction1();
 		}
 	};
 
-	/*
-
-		if (navigator.requestMIDIAccess) {
-			navigator.requestMIDIAccess()
-				.then(success, failure);
-		}
-
-		function success(midi) {
-			var inputs = midi.inputs.values();
-			// inputs is an Iterator
-	console.log(inputs);
-			for (var input = inputs.next(); input && !input.done; input = inputs.next()) {
-				// each time there is a midi message call the onMIDIMessage function
-				//input.value.onmidimessage = onMIDIMessage;
-			}
-		}
-
-		function failure() {
-			console.error('No access to your midi devices.')
-		}
-		/*
-	function onMIDIMessage (message) {
-	    var frequency = midiNoteToFrequency(message.data[1]);
-	 
-	    if (message.data[0] === 144 && message.data[2] > 0) {
-	        playNote(frequency);
-	    }
-	 
-	    if (message.data[0] === 128 || message.data[2] === 0) {
-	        stopNote(frequency);
-	    }
-	}
-	 */
+	
 	function midiNoteToFrequency(note) {
 		return Math.pow(2, ((note - 69) / 12)) * 440;
 	}
 
+	
 	function playNote(frequency) {
 		oscillators[frequency] = context.createOscillator();
 		oscillators[frequency].frequency.value = frequency;
